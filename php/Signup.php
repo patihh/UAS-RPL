@@ -35,7 +35,7 @@ try {
                 $success_message= "Registration successful! You can now log in.";
             }
         } else {
-            $error_message = "Please fill in all fields, including CAPTCHA.";
+            $error_message = "Please fill in all fields";
         }
     }
 } catch (PDOException $e) {

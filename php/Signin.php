@@ -30,7 +30,7 @@ try {
                 $error_message = "Invalid username or password. Please try again.";
             }
         } else {
-            $error_message = "Please fill in all fields, including CAPTCHA.";
+            $error_message = "Please fill in all fields";
         }
     }
 } catch (PDOException $e) {
