@@ -1,0 +1,896 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  font-family: 'Manrope', sans-serif;
+}
+
+body p{
+  margin: 0;
+}
+
+header {
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    border-color: var(--abu-terang);
+    padding: 0 50px; 
+    box-sizing: border-box; 
+    position: fixed;
+    z-index: 1000;
+    background-color: deepskyblue;
+}
+
+
+.logo img{
+    width: auto;
+    max-height: 30px;
+    object-fit: contain;
+}
+
+.search {
+  display: flex;
+  width: 60%;
+  height: 24px;
+  align-items: center;
+  padding: 10px 22px 10px 11px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1.5px solid;
+  border-color: var(--abu-terang);
+}
+
+.search img{
+  height: 24px;
+  padding-right: 5px;
+}
+
+.search p{
+  font-family: "Manrope-Regular", sans-serif;
+  font-weight: 400;
+  color: #bababa;
+  font-size: 20px;
+  text-align: center;
+}
+
+.header-kanan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 205px;
+  gap: 20px;
+}
+
+.header-kanan a{
+  align-items: center;
+  display: flex;
+  outline: none;
+}
+
+.header-kanan p{
+  text-align: center;
+  font-family: "Manrope";
+  font-weight: 700;
+  color: var(--tosca);
+  font-size: 20px;
+  outline: none;
+}
+
+.jual {
+  display: flex;
+  height: 46px;
+  width: max-content;
+  padding: 0px 20px 0px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1.5px, solid;
+  border-color: var(--abu-gelap);
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.register{
+  display: flex;
+  height: 46px;
+  width: max-content;
+  padding: 0px 7px 0px 7px;
+  background-color: #0aa289;
+  border-radius: 12px;
+  border: 1.5px, solid;
+  border-color: var(--abu-gelap);
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.register p{
+  text-align: center;
+  font-family: "Manrope";
+  font-weight: 700;
+  color: white;
+  font-size: 20px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1258px;
+  justify-content: center;
+  gap: 24px 24px;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  width: 188px;
+  height: 300px;
+  align-items: flex-start;
+  /* gap: 10px; */
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: var(--tosca);
+  text-decoration: none;
+}
+
+.product-container img {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 188px;
+  object-fit: cover;
+}
+
+.product-name {
+  position: relative;
+  align-self: stretch;
+  margin: 10px 10px 0px 10px;
+  font-family: 'Manrope';
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.products .product-price {
+  margin: 3px 10px 0px 10px;
+  position: relative;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #000000;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.products .location {
+  margin: 0px 10px 4px 10px;
+  position: relative;
+  align-self: stretch;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: #0aa289;
+  font-size: 12px;
+}
+
+.products .rating {
+  height: 12px;
+  margin: 0px 10px 0px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: var(--abu-terang);
+  font-size: 12px;
+  color: #333333;
+}
+
+.rating span {
+  height: 12px;
+  color: #bababa;
+}
+
+.rating img {
+  width: auto;
+  height: 12px;
+  padding-right: 5px;
+}
+
+.isian {
+  padding-top: 120px;
+  width: 1258px;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 40px;
+}
+
+.gambar-product {
+  width: 400px;
+  height: 500px;
+  border: solid #0aa289;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.gambar-product img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.more-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+}
+
+.more-image img {
+  width: 70px;
+  height: 70px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.detail-product{
+  width: 438px;
+  /* margin-right: 60px; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.nama-product {
+  position: relative;
+  align-self: stretch;
+  font-family: 'Manrope';
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  margin: 0px;
+}
+
+.detail-product .rating{
+  height: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: var(--abu-terang);
+  font-size: 14px;
+  color: #333333;
+}
+
+.detail-product .product-price {
+  position: relative;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  /* text-decoration: none; */
+}
+
+.product-detail .deskripsi {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  color: #333333;
+}
+
+.lihat {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color:#0aa289;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  border-top: 1px solid #bababa;
+  padding-top: 20px;
+}
+
+.toko {
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  padding: 20px 0px;
+  gap: 15px;
+  align-items: center;
+}
+
+.toko img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.toko .nama-toko{
+  color:#0aa289;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 21px;
+}
+
+.toko span{
+  color: #333333;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0%;
+}
+
+.pengiriman .location, .ongkir{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pengiriman h1{
+  color: #333333;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 0%;
+  padding-bottom: 7px;
+}
+
+.ke-keranjang{
+  width: 280px;
+  border: 1px solid #333333;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+  text-align: start;
+  color: #333333;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  gap: 20px;
+}
+
+.ke-keranjang .kotak {
+  width: 84px;
+  height: 24px;
+  border: 1px solid #333333;
+  padding: 8px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333333;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.ke-keranjang .kuantitas{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kotak .minus, .plus{
+  height: 100%;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#0aa289;
+  font-size: 24px;
+}
+
+.kotak .minus:hover, .plus:hover{
+  background-color: #0aa289;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.kuantitas p{
+  color: #0aa289;
+}
+
+.subtotal {
+  width: 100%;
+  color: #333333;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+.harga-subtotal{
+  color: #333333;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.keranjang-beli-container {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ke-keranjang .keranjang {
+  background-color: #0aa289;
+  width: 100%;
+  height: 40px;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ke-keranjang .beli {
+  background-color: #ffffff;
+  width: 100%;
+  height: 40px;
+  color:#0aa289;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  border: 2px solid #0aa289;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+.label-jual {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 27px;
+  background-color: rgba(11, 162, 137, 0.83);
+  border: 0.8px solid #0ba289;
+  box-sizing: border-box;
+  width: 291.6px;
+  height: 147.8px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 39px;
+}
+
+.nama-produk {
+  width: 484px;
+  position: relative;
+  line-height: 112%;
+  display: inline-block;
+}
+
+.placeholder-nama {
+  width: 743.5px;
+  position: relative;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.83);
+  border: 2px solid #0ba289;
+  box-sizing: border-box;
+  height: 52.4px;
+}
+
+.cover-icon {
+  width: 92.6px;
+  position: relative;
+  height: 92.7px;
+}
+
+.upload-cover-foto {
+  width: 146.6px;
+  position: relative;
+  line-height: 112%;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.cover {
+  width: 250px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.83);
+  border: 2px solid #0ba289;
+  box-sizing: border-box;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer; /* Menambahkan pointer untuk menunjukkan area ini bisa diklik */
+  transition: background-color 0.3s; /* Efek transisi saat hover */
+}
+
+.cover:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Warna berubah sedikit saat di-hover */
+  border-color: #088d76; /* Mengubah warna border */
+}
+
+
+.tambahkan-foto-opsional {
+  width: 176.9px;
+  position: relative;
+  font-size: 24px;
+  line-height: 112%;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.imageadd {
+  width: 250px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.83);
+  border: 2px solid #0ba289;
+  box-sizing: border-box;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.contain-gambar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 27px;
+  text-align: center;
+  font-size: 128px;
+  color: #bbb;
+}
+
+.placeholder-desc {
+  width: 743.5px;
+  position: relative;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.83);
+  border: 2px solid #0ba289;
+  box-sizing: border-box;
+  height: 231.1px;
+}
+
+.rp {
+  position: relative;
+  line-height: 112%;
+}
+
+.rp-wrapper {
+  width: 743px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.83);
+  border: 2px solid #0ba289;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 13px 18px;
+  color: #0ba289;
+  gap: 5px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px; /* Add some padding for better spacing */
+  box-sizing: border-box;
+  height: 40px; /* Adjust height as needed */
+  font-size: 16px;
+  border: 1px solid #ccc; /* Optional: Add border for styling */
+  border-radius: 4px; /* Optional: Add border-radius for styling */
+}
+
+input[type="number"]::placeholder {
+  color: #999; /* Change the color of the placeholder */
+  font-weight: bold; /* Optional: Make the placeholder text bold */
+}
+
+.submission input[type="text"],
+.submission input[type="file"],
+.submission textarea {
+    font-size: 16px; /* Ukuran font 16px */
+    padding: 10px; /* Padding 10px */
+    box-sizing: border-box; /* Memastikan padding tidak menambah ukuran total elemen */
+    width: 100%; /* Memastikan elemen mengisi lebar kontainer */
+}
+
+/* Tambahkan juga untuk input number jika ada */
+.submission input[type="number"] {
+    font-size: 16px; /* Ukuran font 16px */
+    padding: 10px; /* Padding 10px */
+    box-sizing: border-box; /* Memastikan padding tidak menambah ukuran total elemen */
+}
+
+
+.submission {
+  position: absolute;
+  top: 77.17px;
+  left: 0px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 40px;
+  background-color: #fff;
+  border: 3px solid #333;
+  box-sizing: border-box;
+  width: 1258px;
+  height: 965.2px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 56px 67px;
+  gap: 21px;
+  font-size: 24px;
+  color: #000;
+}
+
+.submit {
+  position: relative;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.83);
+  border: 2px solid #0ba289;
+  box-sizing: border-box;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 39px;
+  text-align: center;
+  color: #0ba289;
+  font-size: 24px;
+}
+
+.submit:hover{
+  background-color: rgba(11, 162, 137, 0.83);
+  color: #ffffff;
+}
+
+.form-jual {
+  width: 1258px;
+  position: relative;
+  height: 1042.3px;
+  text-align: left;
+  font-size: 36px;
+  color: #fff;
+  font-family: Manrope;
+  top: 120px;
+  padding-bottom: 60px;
+}
+
+.jual-produk{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pfp{
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+  object-fit: cover;
+  
+}
+
+.profile-page{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.text-category p {
+  position: static;
+  margin: 0 !important;
+  letter-spacing: -0.05em;
+  display: inline-block;
+  z-index: auto;
+  font-weight:600;
+}
+
+.text-category {
+  color: white;
+  width: 402px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  background-blend-mode: multiply;
+  height: 102px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.text-category:hover {
+  width: 402px;
+  color: #333333;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+  background-blend-mode:screen;
+  height: 102px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: ease-in 0.4s;
+}
+
+.box-category {
+  width: 402px;
+  border-radius: 12px;
+  height: 102px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-8xl) var(--padding-59xl);
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  text-decoration: none;
+}
+
+.category {
+  width: 1258px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 16px 20px;
+  padding-top: 120px;
+  text-align: center;
+  font-size: 59.88px;
+  color: var(--color-white);
+  font-family: var(--font-manrope);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.category::-webkit-scrollbar {
+  height: 8px;
+}
+
+.category::-webkit-scrollbar-thumb {
+  background-color: #bababa;
+  border-radius: 4px;
+}
+
+.category .box-category {
+  flex: 0 0 auto;
+  min-width: 180px; /* Supaya item tidak mengecil */
+  height: 102px;
+}
+
+.keranjang-beli-container .wishlist-container {
+  margin-bottom: 15px;
+}
+
+.keranjang-beli-container {
+  position: relative;
+}
+
+.keranjang-beli-container .wishlist-btn {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  margin-bottom: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 35px !important;
+  height: 35px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keranjang-beli-container .wishlist-btn img {
+  width: 25px !important;
+  height: 25px !important;
+  display: block;
+  object-fit: contain;
+}
+
+.keranjang-beli-container .wish-btn {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  margin-bottom: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 35px !important;
+  height: 35px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keranjang-beli-container .wish-btn img {
+  width: 25px !important;
+  height: 25px !important;
+  display: block;
+  object-fit: contain;
+}
