@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Manrope, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 50%;
+    border: 5px double black;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.left h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: deepskyblue;
+    border: 2px solid black;
+}
+
+.input-container i {
+    margin-right: 10px;
+}
+
+.input-container input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    height: 50px;
+}
+
+.left form button {
+    background-color: deepskyblue;
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.left form button:hover {
+    background-color: blue;
+    transition: background-color 0.5s ease;
+}
+
+.left button {
+    background-color: deepskyblue;
+    width: 100%;
+    text-decoration: none;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.left button:hover {
+    background-color: blue;
+    transition: background-color 0.5s ease;
+}
