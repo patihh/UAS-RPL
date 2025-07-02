@@ -18,6 +18,7 @@ $user_id = $_SESSION['user_id'];
     <link rel="stylesheet" href="../css/styleguide.css" />
     <link rel="stylesheet" href="../css/styleBuySell.css" />
     <link href="../img/IKAE.png" rel="icon">
+    <title>Home</title>
 </head>
 <body>
     <?php 
@@ -26,23 +27,20 @@ $user_id = $_SESSION['user_id'];
     ?>
 
     <div class="category">
-        <a href="Home.php?category=Romance" class="box-category" style="background-image: url('img/romance.jpg');">
-            <div class="text-category"><p>Romance</p></div>
+        <a href="Home.php?category=ruangTamu" class="box-category" style="background-image: url('../img/ruangtamu.png');">
+            <div class="text-category"><p>Ruang Tamu</p></div>
         </a>
-        <a href="Home.php?category=Fantasy" class="box-category" style="background-image: url('img/fantasy.jpg');">
-            <div class="text-category"><p>Fantasy</p></div>
+        <a href="Home.php?category=kamarTidur" class="box-category" style="background-image: url('../img/kamartidur.png');">
+            <div class="text-category"><p>Kamar Tidur</p></div>
         </a>
-        <a href="Home.php?category=Mystery" class="box-category" style="background-image: url('img/mystery.jpg');">
-            <div class="text-category"><p>Mystery</p></div>
+        <a href="Home.php?category=dapur" class="box-category" style="background-image: url('../img/dapur.png');">
+            <div class="text-category"><p>Dapur</p></div>
         </a>
-        <a href="Home.php?category=Horror" class="box-category" style="background-image: url('img/horror.jpg');">
-            <div class="text-category"><p>Horror</p></div>
+        <a href="Home.php?category=kamarMandi" class="box-category" style="background-image: url('../img/kamarmandi.png');">
+            <div class="text-category"><p>Kamar Mandi</p></div>
         </a>
-        <a href="Home.php?category=Education" class="box-category" style="background-image: url('img/education.jpg');">
-            <div class="text-category"><p>Education</p></div>
-        </a>
-        <a href="Home.php?category=Comedy" class="box-category" style="background-image: url('img/comedy.jpg');">
-            <div class="text-category"><p>Comedy</p></div>
+        <a href="Home.php?category=outdoor" class="box-category" style="background-image: url('../img/outdoor.png');">
+            <div class="text-category"><p>Outdoor</p></div>
         </a>
     </div>
     
@@ -64,7 +62,7 @@ $user_id = $_SESSION['user_id'];
                     <div class="product-caption">
                         <p class="product-name"><?php echo htmlspecialchars($product['name']); ?></p>
                         <div class="product-price">Price: Rp<?php echo number_format($product['price'], 2); ?></div>
-                        <div class="location">Jakarta Timur</div>
+                        <div class="location">Jakarta</div>
                         <div class="rating">
                             <img src="img/bintang.svg" />
                             <p>5.0<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>0+ Terjual</p>

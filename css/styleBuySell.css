@@ -45,9 +45,9 @@ header {
 }
 
 
-.logo img{
+.logo img {
     width: auto;
-    max-height: 30px;
+    max-height: 50px;
     object-fit: contain;
 }
 
@@ -376,7 +376,7 @@ header {
   line-height: 0%;
 }
 
-.pengiriman .location, .ongkir{
+.pengiriman .location {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -763,10 +763,9 @@ input[type="number"]::placeholder {
 }
 
 .text-category {
-  color: white;
+  color: black;
   width: 402px;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
   background-blend-mode: multiply;
   height: 102px;
   display: flex;
@@ -774,21 +773,6 @@ input[type="number"]::placeholder {
   align-items: center;
   justify-content: center;
   position: relative;
-}
-
-.text-category:hover {
-  width: 402px;
-  color: #333333;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
-  background-blend-mode:screen;
-  height: 102px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: ease-in 0.4s;
 }
 
 .box-category {
@@ -803,7 +787,7 @@ input[type="number"]::placeholder {
   box-sizing: border-box;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   text-decoration: none;
 }
 
@@ -835,7 +819,7 @@ input[type="number"]::placeholder {
 
 .category .box-category {
   flex: 0 0 auto;
-  min-width: 180px; /* Supaya item tidak mengecil */
+  min-width: 180px;
   height: 102px;
 }
 

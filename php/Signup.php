@@ -22,7 +22,7 @@ try {
             $stmt = $pdo->prepare("SELECT id FROM users WHERE email = :email");
             $stmt->execute([':email' => $email]);
             if ($stmt->fetch()) {
-                $error_message = "This email is already registered. Please use another email.";
+                $error_message = "Email ini sudah terdaftar. Silakan gunakan email lain.";
             } else {
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                 $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
@@ -32,10 +32,10 @@ try {
                     ':password' => $hashed_password,
                 ]);
 
-                $success_message= "Registration successful! You can now log in.";
+                $success_message= "Registrasi berhasil!";
             }
         } else {
-            $error_message = "Please fill in all fields";
+            $error_message = "Harap isi semua kolom";
         }
     }
 } catch (PDOException $e) {
@@ -47,6 +47,8 @@ try {
         <title>Sign Up</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
         <link href="../css/Logres.css" rel="stylesheet">
+        <link href="../img/IKAE.png" rel="icon">
+        <title>Sign Up</title>
     </head>
 <body>
     <div class="container">
@@ -72,7 +74,7 @@ try {
                 </div>
                 <button type="submit">Sign up</button>
             </form>
-            <p>Already have an account?</p>
+            <p>Sudah memiliki akun?</p>
             <a href="Signin.php" style="width: 100%"><button>Sign in</button></a>
         </div>
     </div>

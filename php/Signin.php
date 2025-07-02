@@ -27,10 +27,10 @@ try {
                 header("Location: Home.php");
                 exit();
             } else {
-                $error_message = "Invalid username or password. Please try again.";
+                $error_message = "Nama pengguna atau kata sandi tidak valid. Silakan coba lagi.";
             }
         } else {
-            $error_message = "Please fill in all fields";
+            $error_message = "Harap isi semua kolom";
         }
     }
 } catch (PDOException $e) {
@@ -42,6 +42,8 @@ try {
         <title>Sign In</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
         <link href="../css/Sign.css" rel="stylesheet">
+        <link href="../img/IKAE.png" rel="icon">
+        <title>Sign In</title>
     </head>
 <body>
     <div class="container">
@@ -61,7 +63,7 @@ try {
                 </div>
                 <button type="submit">Sign in</button>
             </form>
-            <p>Still don't have an account?</p>
+            <p>Belum memiliki akun?</p>
             <a href="Signup.php" style="width: 100%"><button>Sign up</button></a>
         </div>
     </div>
