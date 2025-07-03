@@ -1,0 +1,344 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background-color: #F1FFFD;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  width: 100%;
+}
+
+.container2 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.card p {
+  margin: 0 0 10px;
+}
+
+.card a,
+.card button {
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #0040a8;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.option button {
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #0040a8;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Layout */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.left-content, .right-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.product-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-card .details {
+  flex: 1;
+}
+
+.product-card .details h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.product-card .details p {
+  margin: 0 0 8px;
+}
+
+.product-card .price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Ringkasan Belanja */
+.summary-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 70px;
+  width: 100%;
+  max-width: 400px;
+  margin-left: 50px;
+}
+.summary-cards {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.summary-card .option {
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+}
+
+.summary-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.summary-card .total {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.summary-card a {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #0040a8;
+  border: 1px solid #0040a8;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 500px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 10000;
+}
+
+.popup h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 30px;
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+
+.popup form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 15px;
+  width: 90%;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  color: #555;
+  padding: 5px;
+}
+
+.popup button {
+  padding: 10px 20px;
+  background-color: #0040a8;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .product-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .summary-card {
+    margin-top: 40px;
+    margin-left: 0;
+  }
+}
+
+/* Styling khusus untuk metode pengiriman */
+.summary-cards.card .option {
+  text-align: left;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.summary-cards.card h3,
+.summary-cards.card p {
+  margin-bottom: 10px;
+}
+
+.summary-cards.card label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  user-select: none;
+}
+
+.summary-cards.card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.summary-cards.card input[type="radio"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0040a8;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.summary-cards.card input[type="radio"]:checked + label::before {
+  background-color: #0040a8;
+}
+
+.summary-cards.card input[type="radio"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.summary-cards.card .option-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
