@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $host = 'localhost';
-$dbname = 'projectppw';
+$dbname = 'projectrpl';
 $username = 'root';
 $password = '';
 

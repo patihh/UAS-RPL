@@ -131,6 +131,15 @@ header {
   height: auto;
 }
 
+.content {
+  width: 100%;
+  padding-top: 120px;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: start;
+}
+
 .register{
   display: flex;
   height: 46px;
@@ -175,8 +184,7 @@ header {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid;
-  border-color: var(--tosca);
+  border: 1px solid black;
   text-decoration: none;
 }
 
@@ -246,19 +254,19 @@ header {
 }
 
 .isian {
-  padding-top: 120px;
-  width: 1258px;
+  width: auto;
+  gap: 50px;
   height: max-content;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: right;
   align-items: start;
-  gap: 40px;
 }
 
 .gambar-product {
-  width: 400px;
-  height: 500px;
-  border: solid #0aa289;
+  width: 600px;
+  height: auto;
+  border: solid black;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -270,23 +278,6 @@ header {
 .gambar-product img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-}
-
-.more-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  height: 100px;
-  padding: 10px;
-}
-
-.more-image img {
-  width: 70px;
-  height: 70px;
-  border-radius: 7px;
   object-fit: cover;
 }
 
@@ -347,11 +338,10 @@ header {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  color:#0aa289;
+  color:black;
   font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 24px;
-  border-top: 1px solid #bababa;
   padding-top: 20px;
 }
 
@@ -368,11 +358,11 @@ header {
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .toko .nama-toko{
-  color:#0aa289;
+  color: black;
   font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 24px;
@@ -404,7 +394,7 @@ header {
 
 .ke-keranjang{
   width: 280px;
-  border: 1px solid #333333;
+  border: 3px solid black;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -486,10 +476,10 @@ header {
 }
 
 .ke-keranjang .keranjang {
-  background-color: #0aa289;
+  background-color: deepskyblue;
   width: 100%;
   height: 40px;
-  color: #ffffff;
+  color: black;
   font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -500,14 +490,14 @@ header {
 }
 
 .ke-keranjang .beli {
-  background-color: #ffffff;
+  background-color: deepskyblue;
   width: 100%;
   height: 40px;
-  color:#0aa289;
+  color:black;
   font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  border: 2px solid #0aa289;
+  border: 2px solid black;
   border-radius: 40px;
   display: flex;
   justify-content: center;
