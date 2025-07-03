@@ -85,12 +85,6 @@ try {
                         $stmt->execute([$user_id, $product['id']]);
                         $isInWishlist = $stmt->fetch();
                         ?>
-                        <button onclick="toggleWishlist(<?php echo $product['id']; ?>)" class="wish-btn">
-                            <img src="../img/<?php echo $isInWishlist ? 'Full-Heart.png' : 'Outline-Heart.png'; ?>" 
-                                alt="Wishlist" 
-                                id="heart-<?php echo $product['id']; ?>"
-                                style="width: 25px; height: 25px;">
-                        </button>
                         <form action="addcart.php" method="post">
                         <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
                         <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($product['name']); ?>">
@@ -102,6 +96,12 @@ try {
                     </form>
                     </div>
                     <div class="beli">Beli Sekarang</div>  
+                    <button onclick="toggleWishlist(<?php echo $product['id']; ?>)" class="wish-btn">
+                        <img src="../img/<?php echo $isInWishlist ? 'Full-Heart.png' : 'Outline-Heart.png'; ?>" 
+                            alt="Wishlist" 
+                            id="heart-<?php echo $product['id']; ?>"
+                            style="width: 25px; height: 25px;">
+                    </button>
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@ try {
     <script>
     function toggleWishlist(productId) {
         const heartIcon = document.getElementById(`heart-${productId}`);
-        const isInWishlist = heartIcon.src.includes('../img/Full-Heart.png');
+        const isInWishlist = heartIcon.src.includes('Full-Heart.png');
         
         fetch('wishlist_process.php', {
             method: 'POST',
