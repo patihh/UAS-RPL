@@ -27,10 +27,11 @@ $totalPrice = 0;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keranjang Belanja</title>
-    <link rel="stylesheet" href="styleCart-1.css">
+    <link rel="stylesheet" href="../css/styleCart-1.css">
+    <link href="../img/IKAE.png" rel="icon">
 </head>
 <body>
-    <?php include "layout/header.html"; ?>
+    <?php include "../layout/header.html"; ?>
 
     <div class="halaman-cart">
         <h1 class="keranjang">Keranjang</h1>

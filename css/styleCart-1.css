@@ -24,21 +24,29 @@ body {
   font-family: 'Manrope', sans-serif;
 }
 
-.pfp{
+.pfp {
   width: 46px;
   height: 46px;
   border-radius: 100%;
   object-fit: cover;
-  
 }
-.header-kanan .jual p{
-  text-align: center;
-  font-family: "Manrope";
-  font-weight: 700;
-  color: var(--tosca);
-  font-size: 20px;
+
+.jual {
+  display: flex;
+  height: 46px;
+  width: max-content;
+  padding: 0px 20px 0px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1.5px, solid;
+  border-color: var(--abu-gelap);
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   outline: none;
+  box-sizing: border-box;
 }
+
 .header-kanan {
   display: flex;
   align-items: center;
@@ -48,9 +56,17 @@ body {
   gap: 20px;
 }
 
-.header-kanan a{
+.header-kanan a {
   align-items: center;
   display: flex;
+  outline: none;
+}
+
+.header-kanan .jual p {
+  text-align: center;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
   outline: none;
 }
 
@@ -67,13 +83,13 @@ header {
     box-sizing: border-box; 
     position: fixed;
     z-index: 1000;
-    background-color: white;
+    background-color: deepskyblue;
 }
 
 
-.logo img{
+.logo img {
     width: auto;
-    max-height: 30px;
+    max-height: 50px;
     object-fit: contain;
 }
 
@@ -89,12 +105,12 @@ header {
   border-color: var(--abu-terang);
 }
 
-.search img{
+.search img {
   height: 24px;
   padding-right: 5px;
 }
 
-.search p{
+.search p {
   font-family: "Manrope-Regular", sans-serif;
   font-weight: 400;
   color: #bababa;
