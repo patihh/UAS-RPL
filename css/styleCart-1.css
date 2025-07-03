@@ -1,0 +1,302 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+ 
+body {
+  background-color: #ffffff;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  font-family: 'Manrope', sans-serif;
+}
+
+.pfp{
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+  object-fit: cover;
+  
+}
+.header-kanan .jual p{
+  text-align: center;
+  font-family: "Manrope";
+  font-weight: 700;
+  color: var(--tosca);
+  font-size: 20px;
+  outline: none;
+}
+.header-kanan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 205px;
+  gap: 20px;
+}
+
+.header-kanan a{
+  align-items: center;
+  display: flex;
+  outline: none;
+}
+
+header {
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    border-color: var(--abu-terang);
+    padding: 0 50px; 
+    box-sizing: border-box; 
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
+}
+
+
+.logo img{
+    width: auto;
+    max-height: 30px;
+    object-fit: contain;
+}
+
+.search {
+  display: flex;
+  width: 60%;
+  height: 24px;
+  align-items: center;
+  padding: 10px 22px 10px 11px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1.5px solid;
+  border-color: var(--abu-terang);
+}
+
+.search img{
+  height: 24px;
+  padding-right: 5px;
+}
+
+.search p{
+  font-family: "Manrope-Regular", sans-serif;
+  font-weight: 400;
+  color: #bababa;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Font Import */
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  background-color: #f9fafb;
+}
+
+.halaman-cart {
+  padding: 120px 5% 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.keranjang {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 32px;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.product-list {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.product-box {
+  display: flex;
+  gap: 24px;
+  width: 500px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  min-height: 180px;
+}
+
+.product-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.price {
+  font-size: 16px;
+  color: #374151;
+}
+
+.stock {
+  font-size: 14px;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quantity-selector form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100px;
+  background-color: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.quantity-selector button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #4b5563;
+  transition: color 0.2s ease;
+}
+
+.quantity-selector button:hover {
+  color: #111827;
+}
+
+.quantity-selector span {
+  font-weight: 600;
+  font-size: 16px;
+  color: #111827;
+  min-width: 24px;
+  text-align: center;
+}
+
+.summary-box {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.summary-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.total-label,
+.total-price {
+  font-size: 16px;
+  color: #374151;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-price {
+  font-weight: 700;
+  font-size: 20px;
+  color: #111827;
+  margin-top: 4px;
+}
+
+.checkout-button {
+  margin-top: 12px;
+  padding: 14px;
+  background-color: #5b21b6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.checkout-button:hover {
+  background-color: #4c1d95;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .product-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .quantity-selector form {
+    justify-content: flex-start;
+  }
+}
