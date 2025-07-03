@@ -1,0 +1,320 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('fonts/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  font-family: 'Manrope', sans-serif;
+}
+
+body p{
+  margin: 0;
+}
+
+header {
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    border-color: var(--abu-terang);
+    padding: 0 50px; 
+    box-sizing: border-box; 
+    position: fixed;
+    z-index: 1000;
+    background-color: deepskyblue;
+}
+
+
+.logo img {
+    width: auto;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.search {
+  display: flex;
+  width: 60%;
+  height: 24px;
+  align-items: center;
+  padding: 10px 22px 10px 11px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1.5px solid;
+  border-color: var(--abu-terang);
+}
+
+.search img {
+  height: 24px;
+  padding-right: 5px;
+}
+
+.search p {
+  font-family: "Manrope-Regular", sans-serif;
+  font-weight: 400;
+  color: #bababa;
+  font-size: 20px;
+  text-align: center;
+}
+
+.header-kanan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 205px;
+  gap: 20px;
+}
+
+.header-kanan a {
+  align-items: center;
+  display: flex;
+  outline: none;
+}
+
+.header-kanan .jual p {
+  text-align: center;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+  outline: none;
+}
+
+.jual {
+  display: flex;
+  height: 46px;
+  width: max-content;
+  padding: 0px 20px 0px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1.5px, solid;
+  border-color: var(--abu-gelap);
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.pfp{
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.kiri {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 40px 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 16px;
+  border-top: 5px solid #0058a3; /* IKEA blue */
+}
+
+.profile {
+  position: relative;
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 28px;
+  text-align: left;
+  font-size: 26px; /* font-size-7xl */
+  color: #000;
+  font-family: 'Manrope';
+}
+
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-picture-box {
+  flex: 1 1 300px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.profile-picture-box img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.upload-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 2px solid #0058a3;
+  color: #0058a3;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.upload-btn:hover {
+  background-color: #0058a3;
+  color: white;
+}
+
+.upload-info {
+  font-size: 13px;
+  color: #777;
+  margin-top: 12px;
+}
+
+.profile-details {
+  flex: 2 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.profile-section h3 {
+  color: #2d2d2d;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.profile-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 0;
+  margin-bottom: 15px;
+}
+
+.profile-field .value {
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-field .edit-link {
+  color: #009578;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.profile-field .edit-link:hover {
+  text-decoration: underline;
+}
+
+.verification-badge {
+  background-color: #a8f0c6;
+  color: #006644;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Profil Section Container */
+.profile-section {
+  background-color: #f5faff;
+  border: 1px solid #cce0f5;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+
+.profile-field .label {
+  width: 150px;
+  font-weight: bold;
+  color: #003b73;
+}
+
+.profile-field .value {
+  flex: 1;
+}
+
+/* Input Styling */
+.profile-field input[type="text"],
+.profile-field input[type="date"],
+.profile-field select {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1.5px solid #cce0f5;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.profile-field input:focus,
+.profile-field select:focus {
+  outline: none;
+  border-color: #007cc2;
+}
+
+/* Tombol Simpan */
+.save-btn {
+  padding: 10px 20px;
+  background-color: #007cc2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Verifikasi Email Badge */
+.verification-badge {
+  background-color: #d4f4ec;
+  color: #008060;
+  font-size: 12px;
+  padding: 3px 8px;
+  margin-left: 10px;
+  border-radius: 6px;
+}

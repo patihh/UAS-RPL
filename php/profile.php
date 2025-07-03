@@ -2,7 +2,7 @@
 session_start();
 
 $host = 'localhost';
-$dbname = 'projectppw';
+$dbname = 'projectrpl';
 $username = 'root'; 
 $password = '';
 
@@ -12,8 +12,13 @@ try {
 } catch (PDOException $e) {
     die("Database error: " . $e->getMessage());
 }
-?>
-<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['tanggal_lahir'] = $_POST['tanggal_lahir'] ?? '';
+    $_SESSION['jenis_kelamin'] = $_POST['jenis_kelamin'] ?? '';
+    $_SESSION['no_hp'] = $_POST['no_hp'] ?? '';
+}
+
 $user_id = $_SESSION['user_id'] ?? null;
 
 if ($user_id) {
@@ -32,6 +37,10 @@ if ($user_id) {
     $user_name = "Guest";
     $user_email = "Not logged in";
 }
+
+$tanggal_lahir = $_SESSION['tanggal_lahir'] ?? null;
+$jenis_kelamin = $_SESSION['jenis_kelamin'] ?? null;
+$no_hp = $_SESSION['no_hp'] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -39,52 +48,77 @@ if ($user_id) {
 <head>
   	<meta charset="utf-8">
   	<meta name="viewport" content="initial-scale=1, width=device-width">
-        <link rel="stylesheet" href="styleProfile.css" />
+    <link rel="stylesheet" href="../css/styleProfile.css" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
-  	<link rel="stylesheet" href="styles/sidebar.css" />
+  	<link rel="stylesheet" href="../css/sidebar.css" />
 </head>
 <body class="profile-page">
-    <?php include "layout/header.html"?>
+    <?php include "../layout/header.html"?>
     <div class="profile">
-        <?php include "layout/sidebar.php" ?>
         <div class="kiri">
-      			<div class="profilku">
-        				<img class="profile-pic-icon" alt="" src="img/icontoko.jpg">
-        				
-        				<div class="hansen-nathaniel-parent">
-          					<div class="hansen-nathaniel"><?php echo $user_name; ?></div>
-          					<div class="hansennathanielgmailcom"><?php echo $user_email; ?></div>
-        				</div>
-      			</div>
-      			<div class="kiri-child">
-      			</div>
-      			<div class="identitasku">
-        				<div class="nama-parent">
-          					<div class="nama">Nama</div>
-          					<div class="nama">Tanggal Lahir</div>
-          					<div class="nama">Kelamin</div>
-          					<div class="nama">Email</div>
-          					<div class="nama">Nomor HP</div>
-          					<div class="nama">Kota</div>
-        				</div>
-        				<div class="parent">
-          					<b class="b">:</b>
-          					<b class="b">:</b>
-          					<b class="b">:</b>
-          					<b class="b">:</b>
-          					<b class="b">:</b>
-          					<b class="b">:</b>
-        				</div>
-        				<div class="hansen-nathaniel-group">
-          					<div class="b"><?php echo $user_name; ?></div>
-          					<div class="tambah">Tambah</div>
-          					<div class="b">Laki-Laki</div>
-          					<div class="b"><?php echo $user_email; ?></div>
-          					<div class="tambah">Tambah</div>
-          					<div class="tambah">Tambah</div>
-        				</div>
-      			</div>
-    		</div>
+			<?php include "sidebar.php" ?>
+            <div class="profile-container">
+                <!-- FOTO PROFIL -->
+                <div class="profile-picture-box">
+                    <img src="../img/guest.png" alt="Foto Profil">
+                    <p class="upload-info">
+                      Besar file: maksimum 10.000.000 bytes (10 MB). <br>
+                      Ekstensi file yang diperbolehkan: JPG, JPEG, PNG
+                    </p>
+                </div>
+
+                <!-- DETAIL PROFIL -->
+                <div class="profile-details">
+                    <form method="POST" class="profile-section">
+                        <h3>Biodata Diri</h3>
+
+                        <div class="profile-field">
+                            <div class="label">Nama</div>
+                            <div class="value">
+                                <?php echo $user_name; ?>
+                            </div>
+                        </div>
+
+                        <div class="profile-field">
+                            <div class="label">Tanggal Lahir</div>
+                            <div class="value">
+                                <input type="date" name="tanggal_lahir" value="<?php echo htmlspecialchars($tanggal_lahir); ?>" />
+                            </div>
+                        </div>
+
+                        <div class="profile-field">
+                            <div class="label">Jenis Kelamin</div>
+                            <div class="value">
+                                <select name="jenis_kelamin">
+                                    <option value="">-- Pilih --</option>
+                                    <option value="Laki-Laki" <?php if ($jenis_kelamin == "Laki-Laki") echo 'selected'; ?>>Laki-Laki</option>
+                                    <option value="Perempuan" <?php if ($jenis_kelamin == "Perempuan") echo 'selected'; ?>>Perempuan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <h3>Kontak</h3>
+
+                        <div class="profile-field">
+                            <div class="label">Email</div>
+                            <div class="value">
+                                <?php echo $user_email; ?>
+                                <span class="verification-badge">Terverifikasi</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-field">
+                            <div class="label">Nomor HP</div>
+                            <div class="value">
+                                <input type="text" name="no_hp" value="<?php echo htmlspecialchars($no_hp); ?>" placeholder="Tambah Nomor HP" />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="save-btn">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

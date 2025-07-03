@@ -12,16 +12,17 @@
   font-style: normal;
 }
 
-body {
+html {
   background: repeating-linear-gradient( 45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 75px );
   background-attachment: fixed;
+}
+
+body {
   margin: 0;
-  height: auto;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
   font-family: 'Manrope', sans-serif;
 }
 
@@ -115,22 +116,6 @@ header {
   box-sizing: border-box;
 }
 
-.square {
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  font-family: 'Manrope', sans-serif;
-  background-color: whitesmoke;
-  border-radius: 12px;
-  border: 3px solid #333;
-  margin-top: 120px;
-  margin-bottom: 50px;
-  height: auto;
-}
-
 .register{
   display: flex;
   height: 46px;
@@ -153,6 +138,65 @@ header {
   font-weight: 700;
   color: white;
   font-size: 20px;
+}
+
+.ads {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1258px;
+  height: 302px;
+  padding-top: 120px;
+  /* top: 120px; */
+}
+
+.ads img{
+  border-radius: 21px;
+}
+
+.rectangle {
+  align-self: start;
+  position: absolute;
+  width: 50px;
+  height: 92px;
+  background-color: #ffffff;
+  border-radius: 66.25px;
+  border: 1.25px solid;
+  border-color: var(--tosca);
+  box-shadow: 0px 0px 2.82px #00000040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.rectangle-2 {
+  align-self: flex-end;
+  position: absolute;
+  width: 50px;
+  height: 92px;
+  background-color: #ffffff;
+  border-radius: 66.25px;
+  border: 1.25px solid;
+  border-color: var(--tosca);
+  box-shadow: 0px 0px 2.82px #00000040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.kekanankiri {
+  top: 3px;
+  font-family: "Manrope";
+  font-weight: 700;
+  color: var(--tosca);
+  font-size: 42px;
+  text-align: center;
+  line-height: normal;
+  white-space: nowrap;
 }
 
 .products {
@@ -189,20 +233,19 @@ header {
 }
 
 .product-name {
-  text-decoration: none;
   position: relative;
   align-self: stretch;
   margin: 10px 10px 0px 10px;
   font-family: 'Manrope';
   font-weight: 400;
   color: #000000;
-  font-size: 24px;
+  font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis; 
   display: -webkit-box; 
   -webkit-box-orient: vertical; 
   -webkit-line-clamp: 2;
-  line-clamp: 2;
+  line-clamp: 2
 }
 
 .products .product-price {
@@ -239,6 +282,11 @@ header {
   color: #333333;
 }
 
+.rating span {
+  height: 12px;
+  color: #bababa;
+}
+
 .rating img {
   width: auto;
   height: 12px;
@@ -264,7 +312,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto;
 }
 
 .gambar-product img {
@@ -387,7 +434,7 @@ header {
   line-height: 0%;
 }
 
-.pengiriman .location {
+.pengiriman .location, .ongkir{
   display: flex;
   align-items: center;
   gap: 5px;
@@ -404,6 +451,7 @@ header {
 
 .ke-keranjang{
   width: 280px;
+  height: 275px;
   border: 1px solid #333333;
   border-radius: 16px;
   display: flex;
@@ -519,22 +567,6 @@ body {
   line-height: normal;
 }
 
-.label-jual {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-radius: 27px;
-  border: 0.8px solid black;
-  box-sizing: border-box;
-  width: 291.6px;
-  height: 147.8px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 20px 39px;
-}
-
 .nama-produk {
   width: 484px;
   position: relative;
@@ -547,7 +579,7 @@ body {
   position: relative;
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.83);
-  border: 2px solid #0ba289;
+  border: 2px solid black;
   box-sizing: border-box;
   height: 52.4px;
 }
@@ -570,7 +602,7 @@ body {
   width: 250px;
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.83);
-  border: 2px solid #0ba289;
+  border: 2px solid black;
   box-sizing: border-box;
   height: 250px;
   display: flex;
@@ -580,7 +612,7 @@ body {
   padding: 10px;
   gap: 10px;
   font-size: 24px;
-  color: #333;
+  color: black;
   cursor: pointer; /* Menambahkan pointer untuk menunjukkan area ini bisa diklik */
   transition: background-color 0.3s; /* Efek transisi saat hover */
 }
@@ -623,7 +655,7 @@ body {
   gap: 27px;
   text-align: center;
   font-size: 128px;
-  color: #bbb;
+  color: black;
 }
 
 .placeholder-desc {
@@ -631,7 +663,7 @@ body {
   position: relative;
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.83);
-  border: 2px solid #0ba289;
+  border: 2px solid black;
   box-sizing: border-box;
   height: 231.1px;
 }
@@ -645,25 +677,25 @@ body {
   width: 743px;
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.83);
-  border: 2px solid #0ba289;
+  border: 2px solid black;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   padding: 13px 18px;
-  color: #0ba289;
+  color: black;
   gap: 5px;
 }
 
 input[type="number"] {
   width: 100%;
-  padding: 10px; /* Add some padding for better spacing */
+  padding: 10px;
   box-sizing: border-box;
-  height: 40px; /* Adjust height as needed */
+  height: 40px;
   font-size: 16px;
-  border: 1px solid #ccc; /* Optional: Add border for styling */
-  border-radius: 4px; /* Optional: Add border-radius for styling */
+  border: 1px solid black;
+  border-radius: 4px;
 }
 
 input[type="number"]::placeholder {
@@ -689,16 +721,15 @@ input[type="number"]::placeholder {
 
 
 .submission {
-  position: absolute;
+  position: relative;
   top: 77.17px;
   left: 0px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   border-radius: 40px;
-  background-color: #fff;
+  background-color: whitesmoke;
   border: 3px solid #333;
   box-sizing: border-box;
   width: 1258px;
-  height: 965.2px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -707,13 +738,14 @@ input[type="number"]::placeholder {
   gap: 21px;
   font-size: 24px;
   color: #000;
+  margin-bottom: 100px;
 }
 
 .submit {
   position: relative;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.83);
-  border: 2px solid #0ba289;
+  background-color: gray;
+  border: 2px solid black;
   box-sizing: border-box;
   width: 40%;
   display: flex;
@@ -722,25 +754,21 @@ input[type="number"]::placeholder {
   justify-content: center;
   padding: 18px 39px;
   text-align: center;
-  color: #0ba289;
+  color: black;
   font-size: 24px;
-}
-
-.submit:hover{
-  background-color: rgba(11, 162, 137, 0.83);
-  color: #ffffff;
+  cursor: pointer;
 }
 
 .form-jual {
   width: 1258px;
   position: relative;
-  height: 1042.3px;
+  height: auto;
   text-align: left;
   font-size: 36px;
   color: #fff;
   font-family: Manrope;
-  top: 120px;
-  padding-bottom: 60px;
+  top: 50px;
+  padding-bottom: 100px;
 }
 
 .jual-produk{
@@ -754,137 +782,4 @@ input[type="number"]::placeholder {
   height: 46px;
   border-radius: 100%;
   object-fit: cover;
-  
-}
-
-.profile-page{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.text-category p {
-  position: static;
-  margin: 0 !important;
-  letter-spacing: -0.05em;
-  display: inline-block;
-  z-index: auto;
-  font-weight:600;
-}
-
-.text-category {
-  color: black;
-  width: 402px;
-  border-radius: 12px;
-  background-blend-mode: multiply;
-  height: 102px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.box-category {
-  width: 402px;
-  border-radius: 12px;
-  height: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-8xl) var(--padding-59xl);
-  box-sizing: border-box;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-decoration: none;
-}
-
-.category {
-  width: 1258px;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-content: flex-start;
-  gap: 16px 20px;
-  padding-top: 50px;
-  text-align: center;
-  font-size: 59.88px;
-  color: var(--color-white);
-  font-family: var(--font-manrope);
-  overflow-x: auto;
-  scrollbar-width: thin;
-}
-
-.category::-webkit-scrollbar {
-  height: 8px;
-}
-
-.category::-webkit-scrollbar-thumb {
-  background-color: #bababa;
-  border-radius: 4px;
-}
-
-.category .box-category {
-  flex: 0 0 auto;
-  min-width: 180px;
-  height: 120px;
-}
-
-.keranjang-beli-container .wishlist-container {
-  margin-bottom: 15px;
-}
-
-.keranjang-beli-container {
-  position: relative;
-}
-
-.keranjang-beli-container .wishlist-btn {
-  background: none !important;
-  border: none !important;
-  outline: none !important;
-  padding: 0 !important;
-  cursor: pointer;
-  margin-bottom: 15px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 35px !important;
-  height: 35px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.keranjang-beli-container .wishlist-btn img {
-  width: 25px !important;
-  height: 25px !important;
-  display: block;
-  object-fit: contain;
-}
-
-.keranjang-beli-container .wish-btn {
-  background: none !important;
-  border: none !important;
-  outline: none !important;
-  padding: 0 !important;
-  cursor: pointer;
-  margin-bottom: 15px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 35px !important;
-  height: 35px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.keranjang-beli-container .wish-btn img {
-  width: 25px !important;
-  height: 25px !important;
-  display: block;
-  object-fit: contain;
 }

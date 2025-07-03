@@ -1,0 +1,314 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+  }
+
+.profile-page{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.opsi-kanan {
+    width: 214px;
+    flex: 1;
+    position: relative;
+    font-size: 24px;
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
+.opsi-kanan .b{
+    color: #0ba289;
+}
+
+.opsi-kanan:hover {
+    font-weight: bold;
+    color: #0ba289;
+}
+
+.profile-kanan {
+    width: 269.2px;
+    border-radius: 15.21px;
+    background-color: #fff;
+    border: 0.8px solid #000;
+    box-sizing: border-box;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 37px 25px;
+    gap: 10px;
+}
+
+.profile-pic-icon {
+    width: 74.2px;
+    position: relative;
+    border-radius: 43.73px;
+    height: 74.2px;
+    object-fit: cover;
+}
+
+.b {
+    align-self: stretch;
+    position: relative;
+    display: inline-block;
+    height: 32.5px;
+    flex-shrink: 0;
+}
+
+.parent {
+    width: 17px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 37px;
+    text-align: center;
+    color: #0ba289;
+}
+
+.tambah {
+    align-self: stretch;
+    position: relative;
+    color: #0ba289;
+    display: inline-block;
+    height: 32.5px;
+    flex-shrink: 0;
+}
+
+.hansennathanielgmailcom1 {
+    width: 411px;
+    position: relative;
+    display: inline-block;
+    height: 32.5px;
+    flex-shrink: 0;
+}
+
+.hansen-nathaniel-group {
+    width: 498px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 37px;
+}
+
+.identitasku {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 26px;
+} */
+
+.kiri {
+    display: inline-flex;
+    flex-direction: column;
+    width: 827.3px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 200px;
+    position: relative;
+}
+
+.kiri .item {
+    display: flex;
+    width: 827.3px;
+    align-items: flex-start;
+    gap: 29px;
+    /* padding: 30px 34px; */
+    margin-bottom: 28px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+}
+
+.kiri .kotak-hapus {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border-radius: 7px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.delete-btn img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+}
+
+.delete-btn:hover img {
+    transform: scale(1.1);
+}
+
+.kiri .image {
+    height: 178.67px;
+    position: relative;
+    width: 178.67px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.kiri .detail-wishlist {
+    display: flex;
+    flex-direction: column;
+    width: 526px;
+    height: 179px;
+    align-items: flex-start;
+    gap: 8.35px;
+    padding: 10px;
+    position: relative;
+}
+
+.kiri .text-wrapper {
+    position: relative;
+    width: 492.61px;
+    /* height: 50.12px; */
+    margin-top: -1.67px;
+    font-family: "Manrope-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 23.3px;
+    letter-spacing: 0;
+    line-height: 26.1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.kiri .div {
+    position: relative;
+    width: 528.21px;
+    height: 34.01px;
+    margin-right: -22.21px;
+    font-family: "Manrope-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 28.6px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 0;
+    line-clamp: 0;
+    -webkit-box-orient: vertical;
+}
+
+.kiri .text-wrapper-2 {
+    position: relative;
+    width: 528.21px;
+    margin-right: -22.21px;
+    font-family: "Manrope-Regular", Helvetica;
+    font-weight: 400;
+    color: #0aa289;
+    font-size: 21.5px;
+    letter-spacing: 0;
+    line-height: 24.1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 0;
+    line-clamp: 0;
+    -webkit-box-orient: vertical;
+}
+
+.kiri .frame {
+    display: inline-flex;
+    align-items: center;
+    gap: 5.37px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.kiri .vector {
+    position: relative;
+    width: 23.27px;
+    height: 21.48px;
+}
+
+.kiri .element-terjual {
+    position: relative;
+    width: 270.3px;
+    font-family: "Manrope-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--variable-collection-color);
+    font-size: 21.5px;
+    letter-spacing: 0;
+    line-height: 24.1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 0;
+    line-clamp: 0;
+    -webkit-box-orient: vertical;
+}
+
+.kiri .span {
+    color: #333333;
+}
+
+.kiri .text-wrapper-3 {
+    color: #bababa;
+}
+
+.kiri .img {
+    height: 45.9px;
+    position: relative;
+    width: 178.67px;
+    object-fit: cover;
+}
+
+.kiri .vector-2 {
+    margin-top: -3530.18px;
+    margin-left: -959.50px;
+    position: relative;
+    width: 23.27px;
+    height: 21.48px;
+}
+
+
+.profile {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 28px;
+    text-align: left;
+    font-size: 26px;
+    color: #000;
+    font-family: Inter;
+}
