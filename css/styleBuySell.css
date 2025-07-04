@@ -489,6 +489,10 @@ header {
   align-items: center;
 }
 
+.keranjang {
+  cursor: pointer;
+}
+
 .ke-keranjang .beli {
   background-color: deepskyblue;
   width: 100%;

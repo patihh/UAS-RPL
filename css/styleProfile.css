@@ -41,13 +41,13 @@ header {
     box-sizing: border-box; 
     position: fixed;
     z-index: 1000;
-    background-color: deepskyblue;
+    background-color: white;
 }
 
 
-.logo img {
+.logo img{
     width: auto;
-    max-height: 50px;
+    max-height: 30px;
     object-fit: contain;
 }
 
@@ -63,12 +63,12 @@ header {
   border-color: var(--abu-terang);
 }
 
-.search img {
+.search img{
   height: 24px;
   padding-right: 5px;
 }
 
-.search p {
+.search p{
   font-family: "Manrope-Regular", sans-serif;
   font-weight: 400;
   color: #bababa;
@@ -85,16 +85,17 @@ header {
   gap: 20px;
 }
 
-.header-kanan a {
+.header-kanan a{
   align-items: center;
   display: flex;
   outline: none;
 }
 
-.header-kanan .jual p {
+.header-kanan .jual p{
   text-align: center;
+  font-family: "Manrope";
   font-weight: 700;
-  color: black;
+  color: var(--tosca);
   font-size: 20px;
   outline: none;
 }
@@ -120,6 +121,7 @@ header {
   height: 46px;
   border-radius: 100%;
   object-fit: cover;
+  
 }
 
 .kiri {

@@ -1,12 +1,13 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: Signin.php");
     exit();
 }
 
 $host = 'localhost';
-$dbname = 'projectppw';
+$dbname = 'projectrpl';
 $username = 'root';
 $password = '';
 
@@ -18,6 +19,17 @@ try {
 }
 
 $user_id = $_SESSION['user_id'];
+
+// Menyimpan alamat dari input ke session jika dikirim
+if (isset($_POST['save_address']) && !empty($_POST['new_address'])) {
+    $_SESSION['shipping_address'] = trim($_POST['new_address']);
+
+    // Inilah bagian penting untuk menghentikan popup muncul kembali
+    header("Location: checkout.php"); 
+    exit();
+}
+
+
 $stmt_user = $pdo->prepare("
     SELECT u.name, p.address
     FROM users u
@@ -28,7 +40,7 @@ $stmt_user->execute([':user_id' => $user_id]);
 $user_data = $stmt_user->fetch(PDO::FETCH_ASSOC);
 
 $username = $user_data['name'] ?? 'Guest';
-$address = $user_data['address'] ?? 'Alamat belum diatur';
+$address = $_SESSION['shipping_address'] ?? ($user_data['address'] ?? 'Alamat belum diatur');
 $cart_items = [];
 $total_price = 0;
 
@@ -40,6 +52,7 @@ $stmt_cart = $pdo->prepare("
 ");
 $stmt_cart->execute([':user_id' => $user_id]);
 $cart_items = $stmt_cart->fetchAll(PDO::FETCH_ASSOC);
+
 $stmt_total_quantity = $pdo->prepare("
     SELECT SUM(quantity) AS total_quantity
     FROM cart
@@ -57,23 +70,18 @@ foreach ($cart_items as $item) {
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleCheckout.css" />
-    <link rel="stylesheet" href="styleBase.css" />
-    <link href="img/PepewShopIcon.png" rel="icon">
+    <link rel="stylesheet" href="../css/styleCheckout.css" />
+    <link rel="stylesheet" href="../css/styleBase.css" />
+    <link href="../img/IKAE.png" rel="icon">
+    <title>Checkout</title>
 </head>
 <body>
-    <?php include "layout/header.html" ?>
+    <?php include "../layout/header.html" ?>
     <div class="container2">
         <div class="section-title">Pengiriman</div>
-        <div class="card">
-            <h3>Alamat Pengiriman</h3>
-            <p>Rumah • <?php echo htmlspecialchars($username); ?></p>
-            <p><?php echo htmlspecialchars($address); ?></p>
-            <a class="button" href="#popup1">Ganti alamat</a>
-        </div>
         <div class="main-content">
             <div class="left-content">
-                <div class="section-title">Barang</div>
+                <div class="section-title">Checkout Barang</div>
                 <?php if (!empty($cart_items)): ?>
                     <?php foreach ($cart_items as $item): ?>
                         <div class="product-card card">
@@ -85,16 +93,7 @@ foreach ($cart_items as $item) {
                             </div>
                         </div>
                     <?php endforeach; ?>
-                <?php else: ?>
-                    <p>Your cart is empty.</p>
-                <?php endif; ?>
-            </div>
-            <div class="right-content">
-                <div class="summary-card card">
-                    <h3>Ringkasan Belanja</h3>
-                    <div class="option">
-                        <p class="total">Total <?php echo $total_quantity; ?> Barang</p>
-                    </div>
+                    <div class="summary-cards card">
                     <div class="option">
                         <p><strong>Pilih Metode Pengiriman:</strong></p>
                         <div>
@@ -110,6 +109,21 @@ foreach ($cart_items as $item) {
                             <label for="instant">Instant/Same Day Delivery - Rp70,000</label>
                         </div>
                     </div>
+                    </div>   
+                <?php else: ?>
+                    <p>Your cart is empty.</p>
+                <?php endif; ?>
+            </div>
+            <div class="right-content">
+                <div class="summary-card card">
+                    <h3>Ringkasan Belanja</h3>
+                    <div class="option">
+                        <p class="total">Total <?php echo $total_quantity; ?> Barang</p>
+                        <p class="total">Alamat Pengiriman : </p>
+                        <p class="total">Rumah • <?php echo htmlspecialchars($username); ?></p>
+                        <p class="total"><?php echo htmlspecialchars($address); ?></p>
+                        <a class="button" href="#popup1">Ganti alamat</a>
+                          </div>
                     <div class="option">
                         <p class="total">Total Harga:</p>
                         <p id="total-price" class="total">Rp<?php echo number_format($total_price + 20000, 0, ',', '.'); ?></p>
@@ -133,7 +147,7 @@ foreach ($cart_items as $item) {
                             const totalPrice = basePrice + deliveryCost;
                             document.getElementById("total-price").innerText = "Rp" + totalPrice.toLocaleString("id-ID");
                         }
-                    
+
                         document.getElementById('pay-button').addEventListener('click', function () {
                             const deliveryOptions = document.getElementsByName("delivery");
                             let deliveryCost = 20000;
@@ -143,7 +157,7 @@ foreach ($cart_items as $item) {
                                     break;
                                 }
                             }
-                        
+
                             fetch('token.php', {
                                 method: 'POST',
                                 headers: {
@@ -153,52 +167,60 @@ foreach ($cart_items as $item) {
                                     total_price: <?php echo $total_price; ?> + deliveryCost,
                                 }),
                             })
-                                .then((response) => response.json())
-                                .then((data) => {
-                                    if (data.snapToken) {
-                                        window.snap.pay(data.snapToken, {
-                                            onSuccess: function (result) {
-                                                window.location.href = 'success.php?order_id=' + data.order_id;
-                                            },
-                                            onPending: function (result) {
-                                                window.location.href = 'pending.php?order_id=' + data.order_id;
-                                            },
-                                            onError: function (result) {
-                                                window.location.href = 'failed.php?order_id=' + data.order_id;
-                                            },
-                                            onClose: function () {
-                                                alert('You closed the payment page!');
-                                            },
-                                        });
-                                    } else {
-                                        alert('Failed to fetch payment token!');
-                                    }
-                                })
-                                .catch((error) => console.error('Error fetching Snap Token:', error));
+                            .then((response) => response.json())
+                            .then((data) => {
+                                if (data.snapToken) {
+                                    window.snap.pay(data.snapToken, {
+                                        onSuccess: function (result) {
+                                            window.location.href = 'success.php?order_id=' + data.order_id;
+                                        },
+                                        onPending: function (result) {
+                                            window.location.href = 'pending.php?order_id=' + data.order_id;
+                                        },
+                                        onError: function (result) {
+                                            window.location.href = 'failed.php?order_id=' + data.order_id;
+                                        },
+                                        onClose: function () {
+                                            alert('You closed the payment page!');
+                                        },
+                                    });
+                                } else {
+                                    alert('Failed to fetch payment token!');
+                                }
+                            })
+                            .catch((error) => console.error('Error fetching Snap Token:', error));
                         });
                     </script>
                     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-G_HMk-QY3iYVRlcO"></script>
+                </div>
             </div>
-        </div>
-    </div>
-    <div id="popup1" class="overlay"> 
-        <div class="popup"> 
-            <h2> Masukan Alamat Baru </h2>
-            <a class="close" href ="#">&times;</a>
-            <div class="search-box">
-                <input type="text" placeholder="Tulis nama alamat/Kota/Kecamatan tujuan pengiriman">
-            </div>
-            <button> Submit </button>
         </div>
     </div>
 
-    <div id="popup2" class="overlay"> 
-        <div class="popup">
-            <img alt="Product Image" src="img/Checkout.svg" width="200"/> 
-            <h2> Checkout Telah Berhasil </h2>
+    <!-- Popup untuk input alamat -->
+    <div id="popup1" class="overlay"> 
+        <div class="popup"> 
+            <h2>Masukkan Alamat Baru</h2>
             <a class="close" href ="#">&times;</a>
-            <button onclick="window.location.href='Home.php'"> Beranda </button>
+            <form method="post" id="address-form">
+                <div class="search-box">
+                    <input type="text" name="new_address" placeholder="Tulis nama alamat/Kota/Kecamatan tujuan pengiriman">
+                </div>
+                <input type="hidden" name="save_address" value="1">
+                <button type="submit">Submit</button>
+            </form>
+
         </div>
     </div>
+
+<script>
+  const form = document.getElementById('address-form');
+  form.addEventListener('submit', function () {
+    // Hilangkan #popup1 sebelum reload
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname);
+    }
+  });
+</script>
 </body>
 </html>
