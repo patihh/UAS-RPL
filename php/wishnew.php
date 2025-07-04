@@ -41,7 +41,7 @@ $wishlist_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../css/styleBase.css" />
 	<link rel="stylesheet" href="../css/wishnew.css" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />  
-    <link rel="stylesheet" href="../css/sidebar.css"/>	
+    <link rel="stylesheet" href="../css/sidebar.css" />	
 	<link href="../img/IKAE.png" rel="icon">
     <title>Wishlist</title>
 </head>
@@ -69,13 +69,15 @@ $wishlist_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 									<img class="vector" src="../img/bintang.svg" />
 									<p class="element-terjual">
 										<span class="span">5.0</span>
+										<span class="text-wrapper-3">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+										<span class="span">10+ Terjual</span>
 									</p>
 								</div>
 							</div>
 						</div>
 					<?php endforeach; ?>
 				<?php else: ?>
-					<p>Wishlist kosong.</p>
+					<p>Your wishlist is empty.</p>
 				<?php endif; ?>
         	</div>			
     	</div>

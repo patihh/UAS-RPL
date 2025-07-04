@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_logout'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="stylesheet" href="../css/styleLogout.css">
+    <link href="../img/IKAE.png" rel="icon">
+    <title>Logout</title>
 </head>
 <body>
     <div class="popup-container">

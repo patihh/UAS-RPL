@@ -13,8 +13,10 @@ body {
     height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: #e5e5f7;
-    background: repeating-linear-gradient( 45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 75px );
+    background-image: url('../img/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .left {

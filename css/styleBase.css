@@ -44,7 +44,6 @@ header {
     background-color: deepskyblue;
 }
 
-
 .logo img {
     width: auto;
     max-height: 50px;
@@ -802,6 +801,7 @@ input[type="number"]::placeholder {
   height: 46px;
   border-radius: 100%;
   object-fit: cover;
+  
 }
 
 .profile-page{

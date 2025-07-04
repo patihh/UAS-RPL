@@ -48,10 +48,9 @@ $no_hp = $_SESSION['no_hp'] ?? null;
 <head>
   	<meta charset="utf-8">
   	<meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="../css/styleProfile.css" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
-    <link rel="stylesheet" href="../css/styleProfile.css"/>
   	<link rel="stylesheet" href="../css/sidebar.css" />
-    <link rel="stylesheet" href="../css/styleBase.css"/>
     <link href="../img/IKAE.png" rel="icon">
     <title>Profile</title>
 </head>
@@ -61,7 +60,6 @@ $no_hp = $_SESSION['no_hp'] ?? null;
         <div class="kiri">
 			<?php include "sidebar.php" ?>
             <div class="profile-container">
-                <!-- FOTO PROFIL -->
                 <div class="profile-picture-box">
                     <img src="../img/guest.png" alt="Foto Profil">
                     <p class="upload-info">
@@ -70,7 +68,6 @@ $no_hp = $_SESSION['no_hp'] ?? null;
                     </p>
                 </div>
 
-                <!-- DETAIL PROFIL -->
                 <div class="profile-details">
                     <form method="POST" class="profile-section">
                         <h3>Biodata Diri</h3>

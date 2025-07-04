@@ -1,6 +1,17 @@
 <?php
 session_start();
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buy_now'])) {
+    $_SESSION['buy_now'] = [
+        'product_id' => $_POST['product_id'],
+        'quantity' => $_POST['quantity']
+    ];
+    $_SESSION['last_buy_now'] = true;
+
+    header("Location: checkout.php?buy_now=1");
+    exit();
+}
+
 $host = 'localhost';
 $dbname = 'projectrpl';
 $username = 'root';
@@ -94,8 +105,14 @@ try {
                         <input type="number" id="quantity" name="quantity" min="1" value="1" required style="margin-bottom: 10px;">
                         <button type="submit" class="keranjang">Tambah ke Keranjang</button>
                     </form>
+
+                        <form method="post">
+                        <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" name="buy_now" class="keranjang" >Beli</button>
+                        </form>
                     </div>
-                    <div class="beli">Beli Sekarang</div>  
+
                     <button onclick="toggleWishlist(<?php echo $product['id']; ?>)" class="wish-btn">
                         <img src="../img/<?php echo $isInWishlist ? 'Full-Heart.png' : 'Outline-Heart.png'; ?>" 
                             alt="Wishlist" 

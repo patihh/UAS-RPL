@@ -40,16 +40,19 @@ $totalPrice = 0;
             <div class="product-list">
                 <?php if ($cartItems): ?>
                     <?php foreach ($cartItems as $item): 
-                        $quantity = $item['quantity'];
-                        $price = $item['price'];
+                        $name = $item['name'] ?? 'Produk Tidak Diketahui';
+                        $image = $item['image'] ?? '../img/default.png';
+                        $price = $item['price'] ?? 0;
+                        $quantity = $item['quantity'] ?? 0;
+                        $total = $price * $quantity;
+
                         $totalQuantity += $quantity;
-                        $totalPrice += $price * $quantity;
+                        $totalPrice += $total;
                     ?>
                     <div class="product-box">
-                        <div class="checkbox"></div>
-                        <img class="product-image" src="<?php echo htmlspecialchars($item['image']); ?>" alt="Product Image">
+                        <img class="product-image" src="<?php echo htmlspecialchars($image); ?>" alt="Product Image">
                         <div class="product-details">
-                            <p class="product-title"><?php echo htmlspecialchars($item['name']); ?></p>
+                            <p class="product-title"><?php echo htmlspecialchars($name); ?></p>
                             <p class="price">Rp<?php echo number_format($price, 2, ',', '.'); ?></p>
                             <div class="quantity-selector">
                                 <form action="update_quantity.php" method="post">
@@ -59,6 +62,11 @@ $totalPrice = 0;
                                     <button type="submit" name="increase" value="+">+</button>
                                 </form>
                             </div>
+
+                            <form action="remove_from_cart.php" method="post" onsubmit="return confirm('Yakin ingin menghapus produk ini dari keranjang?');">
+                                <input type="hidden" name="product_id" value="<?php echo $item['product_id']; ?>">
+                                <button type="submit" class="delete-button">Hapus</button>
+                            </form>
                         </div>
                     </div>
                     <?php endforeach; ?>
