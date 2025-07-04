@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $host = 'localhost';
-$dbname = 'projectrpl';
+$dbname = 'projectppw';
 $username = 'root';
 $password = '';
 
@@ -70,13 +70,13 @@ foreach ($cart_items as $item) {
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styleCheckout.css" />
-    <link rel="stylesheet" href="../css/styleBase.css" />
-    <link href="../img/IKAE.png" rel="icon">
+    <link rel="stylesheet" href="styleCheckout.css" />
+    <link rel="stylesheet" href="styleBase.css" />
+    <link href="img/PepewShopIcon.png" rel="icon">
     <title>Checkout</title>
 </head>
 <body>
-    <?php include "../layout/header.html" ?>
+    <?php include "layout/header.html" ?>
     <div class="container2">
         <div class="section-title">Pengiriman</div>
         <div class="main-content">
